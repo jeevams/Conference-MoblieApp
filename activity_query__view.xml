@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/new_login" android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <Button android:textColor="#ff41bb25" android:id="@id/query_view" android:background="@drawable/su" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="VIEW" />
+            <Button android:textColor="#ff41bb25" android:id="@id/query_del" android:background="@drawable/su" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="Delete" />
+            <EditText android:textColorHint="#ffffffff" android:id="@id/del" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:hint="Seat no" android:maxLines="1" android:ems="10" android:drawablePadding="12.0dip" android:inputType="text" />
+            <Button android:textColor="#ff41bb25" android:id="@id/go_back" android:background="@drawable/su" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="Go Back" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

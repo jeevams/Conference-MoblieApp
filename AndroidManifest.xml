@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="29" android:compileSdkVersionCodename="10" package="com.example.programmingknowledge.madapp" platformBuildVersionCode="29" platformBuildVersionName="10">
+    <application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:testOnly="true" android:theme="@style/AppTheme">
+        <activity android:name="com.example.programmingknowledge.madapp.Query_View"/>
+        <activity android:name="com.example.programmingknowledge.madapp.Query_Post"/>
+        <activity android:name="com.example.programmingknowledge.madapp.Login_Stu"/>
+        <activity android:name="com.example.programmingknowledge.madapp.Signup_Stu"/>
+        <activity android:label="@string/title_activity_login__stu" android:name="com.example.programmingknowledge.madapp.ui.login.Login_Stu"/>
+        <activity android:name="com.example.programmingknowledge.madapp.Login_Signup_Stu"/>
+        <activity android:name="com.example.programmingknowledge.madapp.List_of_Confer"/>
+        <activity android:name="com.example.programmingknowledge.madapp.List_of_confer"/>
+        <activity android:name="com.example.programmingknowledge.madapp.Org_Stu"/>
+        <activity android:name="com.example.programmingknowledge.madapp.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <provider android:authorities="com.example.programmingknowledge.madapp.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+    </application>
+</manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/new_login" android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <EditText android:textColorHint="#ffffffff" android:id="@id/mail" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="100.0dip" android:hint="Mail_ID" android:maxLines="1" android:ems="10" android:drawableLeft="@drawable/ic_person_black_24dp" android:drawablePadding="12.0dip" android:inputType="textEmailAddress" />
+            <EditText android:textColorHint="#ffffffff" android:id="@id/seatnoo" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="70.0dip" android:hint="Seat no" android:maxLines="1" android:ems="10" android:drawableLeft="@drawable/ic_person_black_24dp" android:drawablePadding="12.0dip" android:inputType="text" />
+            <View android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <EditText android:textColorHint="#ffffffff" android:id="@id/password" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="70.0dip" android:hint="PassWord" android:maxLines="1" android:ems="10" android:drawableLeft="@drawable/ic_https_black_24dp" android:drawablePadding="12.0dip" android:inputType="textPassword" />
+            <View android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <EditText android:textColorHint="#ffffffff" android:id="@id/confirm" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="70.0dip" android:hint="Comfirm-PassWord" android:maxLines="1" android:ems="10" android:drawableLeft="@drawable/ic_https_black_24dp" android:drawablePadding="12.0dip" android:inputType="textPassword" />
+            <View android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <Button android:textColor="#ff41bb25" android:id="@id/btnAddData" android:background="@drawable/su" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="70.0dip" android:text="signup" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

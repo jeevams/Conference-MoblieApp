@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/new_login" android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:layout_gravity="center_horizontal" android:padding="16.0dip" android:layout_width="220.0dip" android:layout_height="100.0pt" android:layout_marginTop="48.0dip" android:layout_marginBottom="20.0dip" android:src="@drawable/jeee" />
+            <EditText android:textColorHint="#ffffffff" android:id="@id/email_login" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:hint="Mail_id" android:maxLines="1" android:ems="10" android:drawableLeft="@drawable/ic_person_black_24dp" android:drawablePadding="12.0dip" android:inputType="textEmailAddress" />
+            <View android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <EditText android:textColorHint="#ffffffff" android:id="@id/password_login" android:background="@color/colorAccent" android:padding="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:hint="PassWord" android:maxLines="1" android:ems="10" android:drawableLeft="@drawable/ic_https_black_24dp" android:drawablePadding="12.0dip" android:inputType="textPassword" />
+            <View android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+            <CheckBox android:textColor="#ffffffff" android:padding="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="Remember me" />
+            <Button android:textColor="#ff41bb25" android:id="@id/login_stu" android:background="@drawable/su" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:text="LOGIN" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
