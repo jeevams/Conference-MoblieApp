@@ -18,49 +18,48 @@ public class List_of_Confer
   protected void onCreate(Bundle paramBundle)
   {
     super.onCreate(paramBundle);
-    requestWindowFeature(1);
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
     setContentView(2131427356);
-    this.or = ((Button)findViewById(2131230840));
-    this.cis = ((Button)findViewById(2131230765));
-    this.ama = ((Button)findViewById(2131230749));
-    this.blo = ((Button)findViewById(2131230754));
-    this.or.setOnClickListener(new View.OnClickListener()
+    or = ((Button)findViewById(2131230840));
+    cis = ((Button)findViewById(2131230765));
+    ama = ((Button)findViewById(2131230749));
+    blo = ((Button)findViewById(2131230754));
+    
+    
+    or.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        Intent localIntent = new Intent(List_of_Confer.this, Org_Stu.class);
-        List_of_Confer.this.startActivity(localIntent);
+        Intent intent = new Intent(List_of_Confer.this, Org_Stu.class);
+        startActivity(intent);
       }
     });
-    this.cis.setOnClickListener(new View.OnClickListener()
+    cis.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        Intent localIntent = new Intent(List_of_Confer.this, Org_Stu.class);
-        List_of_Confer.this.startActivity(localIntent);
+        Intent intent = new Intent(List_of_Confer.this, Org_Stu.class);
+        startActivity(intent);
       }
     });
-    this.ama.setOnClickListener(new View.OnClickListener()
+    ama.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        Intent localIntent = new Intent(List_of_Confer.this, Org_Stu.class);
-        List_of_Confer.this.startActivity(localIntent);
+        Intent intent = new Intent(List_of_Confer.this, Org_Stu.class);
+        startActivity(intent);
       }
     });
-    this.blo.setOnClickListener(new View.OnClickListener()
+    blo.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        Intent localIntent = new Intent(List_of_Confer.this, Org_Stu.class);
-        List_of_Confer.this.startActivity(localIntent);
+        Intent intent = new Intent(List_of_Confer.this, Org_Stu.class);
+        startActivity(intent);
       }
     });
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.List_of_Confer
- * JD-Core Version:    0.7.0.1
- */
+
+
