@@ -16,7 +16,7 @@ public class MainActivity extends Activity
   
   public void welcome(View view)
   {
-     Intent intent = new Intent(this, List_of_Confer.class);
+     Intent intent = new Intent(MainActivity.this, List_of_Confer.class);
      startActivity(intent);
   }
 }
