@@ -66,8 +66,5 @@ public class DatabaseHelper
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.DatabaseHelper
- * JD-Core Version:    0.7.0.1
- */
+
+
