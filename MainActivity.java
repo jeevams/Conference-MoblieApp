@@ -5,24 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity
-  extends Activity
+public class MainActivity extends Activity
 {
-  protected void onCreate(Bundle paramBundle)
-  {
-    super.onCreate(paramBundle);
-    requestWindowFeature(1);
-    setContentView(2131427359);
-  }
+  @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+   }
   
-  public void welcome(View paramView)
+  public void welcome(View view)
   {
-    startActivity(new Intent(this, List_of_Confer.class));
+     Intent intent = new Intent(this, List_of_Confer.class);
+     startActivity(intent);
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.MainActivity
- * JD-Core Version:    0.7.0.1
- */
+
+
