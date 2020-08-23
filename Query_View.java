@@ -21,56 +21,65 @@ public class Query_View
   Data mydb;
   Button query_vieww;
   
-  protected void onCreate(Bundle paramBundle)
+  protected void onCreate(Bundle savedInstanceState)
   {
-    super.onCreate(paramBundle);
-    requestWindowFeature(1);
-    setContentView(2131427362);
-    this.db = new Query(this);
-    this.mydb = new Data(this);
-    this.query_vieww = ((Button)findViewById(2131230855));
-    this.go = ((Button)findViewById(2131230802));
-    this.btnDelete = ((Button)findViewById(2131230853));
-    this.dele = ((EditText)findViewById(2131230778));
-    this.go.setOnClickListener(new View.OnClickListener()
+    super.onCreate(savedInstanceState);
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
+    setContentView(R.layout.activity_query__view);
+    db = new Query(this);
+    mydb = new Data(this);
+    query_vieww = ((Button)findViewById(query_view));
+    go = ((Button)findViewById(go_back));
+    btnDelete = ((Button)findViewById(query_del));
+    dele = ((EditText)findViewById(del));
+    
+    go.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        Intent localIntent = new Intent(Query_View.this, Org_Stu.class);
-        Query_View.this.startActivity(localIntent);
+        Intent intent = new Intent(Query_View.this, Org_Stu.class);
+        startActivity(intent);
       }
     });
-    this.btnDelete.setOnClickListener(new View.OnClickListener()
+    
+    btnDelete.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        String str = Query_View.this.dele.getText().toString();
-        Integer localInteger1 = Query_View.this.db.deleteData(str);
-        Integer localInteger2 = Query_View.this.mydb.deletData(str);
+        String str =dele.getText().toString();
+        boolean a = mydb. checkseat(str);
+        int b = mydb.deletData(str);
         if (str.equals(""))
         {
-          Toast.makeText(Query_View.this.getApplicationContext(), "Enter the seat no", 1).show();
+          
+           Toast.makeText(getApplicationContext(), "Enter the seat no",Toast.LENGTH_SHORT).show();
           return;
         }
-        if (localInteger1.intValue() > 0)
+        if (a==true)
         {
-          if (localInteger2.intValue() > 0) {
-            Toast.makeText(Query_View.this, "Data Deleted", 1).show();
+          if (b > 0) 
+          {
+            
+            Toast.makeText(getApplicationContext(), "Data Deleted",Toast.LENGTH_SHORT).show();
+            
           }
         }
-        else {
-          Toast.makeText(Query_View.this, "invaild seat number", 1).show();
+        else 
+        {
+          
+           Toast.makeText(getApplicationContext(), "invaild seat number",Toast.LENGTH_SHORT).show();
         }
       }
     });
-    this.query_vieww.setOnClickListener(new View.OnClickListener()
+    
+    query_vieww.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        Cursor localCursor = Query_View.this.db.getall();
+        Cursor localCursor = db.getall();
         if (localCursor.getCount() == 0)
         {
-          Query_View.this.showMessage("Error", "No Records");
+          showMessage("Error", "No Records");
           return;
         }
         StringBuffer localStringBuffer = new StringBuffer();
@@ -88,7 +97,7 @@ public class Query_View
           localStringBuffer.append(localStringBuilder2.toString());
           localStringBuffer.append("----------------------------------------------------");
         }
-        Query_View.this.showMessage("Queries", localStringBuffer.toString());
+        showMessage("Queries", localStringBuffer.toString());
       }
     });
   }
@@ -103,8 +112,5 @@ public class Query_View
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.Query_View
- * JD-Core Version:    0.7.0.1
- */
+
+
