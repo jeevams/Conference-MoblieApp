@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Query_Post
-  extends Activity
+public class Query_Post extends Activity
 {
   Query db;
   Data mydb;
@@ -20,53 +19,52 @@ public class Query_Post
   
   protected void onCreate(Bundle paramBundle)
   {
-    super.onCreate(paramBundle);
-    requestWindowFeature(1);
-    setContentView(2131427361);
-    this.db = new Query(this);
-    this.mydb = new Data(this);
-    this.seat = ((EditText)findViewById(2131230880));
-    this.question = ((EditText)findViewById(2131230856));
-    this.post = ((Button)findViewById(2131230854));
-    this.post.setOnClickListener(new View.OnClickListener()
+    super.onCreate(savedInstanceState);
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
+    setContentView(R.layout.activity_query__post);
+    db = new Query(this);
+    mydb = new Data(this);
+    seat = ((EditText)findViewById(seat_no));
+    question = ((EditText)findViewById(question));
+    post = ((Button)findViewById(query_post));
+    
+    post.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        String str1 = Query_Post.this.seat.getText().toString();
-        String str2 = Query_Post.this.question.getText().toString();
-        Boolean localBoolean = Boolean.valueOf(Query_Post.this.mydb.checkseat(str1));
+        String str1 = seat.getText().toString();
+        String str2 = question.getText().toString();
+        
+        boolean bool = mydb.checkseat(str1);
         if ((!str1.equals("")) && (!str2.equals("")))
         {
           if (str1.matches("[0-9]"))
           {
-            if (!localBoolean.booleanValue())
+            if (!bool)
             {
-              if (Query_Post.this.db.insertData(str1, str2) == true)
+              if (db.insertData(str1, str2) == true)
               {
-                Toast.makeText(Query_Post.this.getApplicationContext(), "Query Post Successfully", 1).show();
-                Intent localIntent = new Intent(Query_Post.this, Org_Stu.class);
-                Query_Post.this.startActivity(localIntent);
+                Toast.makeText(getApplicationContext(), "Query Post Successfully",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Query_Post.this, Org_Stu.class);
+                startActivity(intent);
               }
               else
               {
-                Toast.makeText(Query_Post.this.getApplicationContext(), "Enter your seat no ", 1).show();
+                Toast.makeText(getApplicationContext(), "Enter your seat no ", Toast.LENGTH_SHORT).show();
               }
               return;
             }
-            Toast.makeText(Query_Post.this.getApplicationContext(), "Enter Correct Seat Number", 1).show();
+            Toast.makeText(getApplicationContext(), "Enter Correct Seat Number", Toast.LENGTH_SHORT).show();
             return;
           }
-          Toast.makeText(Query_Post.this.getApplicationContext(), "invaild seat number", 1).show();
+          Toast.makeText(getApplicationContext(), "invaild seat number", Toast.LENGTH_SHORT).show();
           return;
         }
-        Toast.makeText(Query_Post.this.getApplicationContext(), "field is empty", 1).show();
+        Toast.makeText(getApplicationContext(), "field is empty", Toast.LENGTH_SHORT).show();
       }
     });
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.Query_Post
- * JD-Core Version:    0.7.0.1
- */
+
+
