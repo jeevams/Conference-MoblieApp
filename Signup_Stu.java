@@ -9,8 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Signup_Stu
-  extends Activity
+public class Signup_Stu extends Activity
 {
   EditText confrim;
   Data db;
@@ -19,73 +18,73 @@ public class Signup_Stu
   EditText seatno;
   Button sig;
   
-  protected void onCreate(Bundle paramBundle)
+  protected void onCreate(Bundle savedInstanceState)
   {
-    super.onCreate(paramBundle);
-    requestWindowFeature(1);
-    setContentView(2131427363);
-    this.db = new Data(this);
-    this.email = ((EditText)findViewById(2131230825));
-    this.seatno = ((EditText)findViewById(2131230881));
-    this.password = ((EditText)findViewById(2131230847));
-    this.confrim = ((EditText)findViewById(2131230769));
-    this.sig = ((Button)findViewById(2131230757));
-    this.sig.setOnClickListener(new View.OnClickListener()
+    super.onCreate(savedInstanceState);
+    requestWindowFeature(Window.FEATURE_NO_TITLE);
+    setContentView(R.layout.activity_signup__stu);
+    db = new Data(this);
+    email =((EditText)findViewById(mail));
+    seatno =((EditText)findViewById(seatnoo));
+    password =((EditText)findViewById(password));
+    confrim =((EditText)findViewById(confirm));
+    sig =((Button)findViewById(btnAddData));
+    
+    sig.setOnClickListener(new View.OnClickListener()
     {
-      public void onClick(View paramAnonymousView)
+      public void onClick(View v)
       {
-        String str1 = Signup_Stu.this.email.getText().toString();
-        String str2 = Signup_Stu.this.seatno.getText().toString();
-        String str3 = Signup_Stu.this.password.getText().toString();
-        String str4 = Signup_Stu.this.confrim.getText().toString();
-        Boolean localBoolean = Boolean.valueOf(Signup_Stu.this.db.checkseat(str2));
+        String str1 = email.getText().toString();
+        String str2 = seatno.getText().toString();
+        String str3 = password.getText().toString();
+        String str4 = confrim.getText().toString();
+        
+        boolean bool =db.checkseat(str2);
+        
         if ((!str1.equals("")) && (!str3.equals("")) && (!str4.equals("")) && (!str2.equals("")))
         {
           if (str1.matches("[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"))
           {
-            if (Boolean.valueOf(Signup_Stu.this.db.checkemail(str1)).booleanValue() == true)
+            if (bool(db.checkemail(str1))== true)
             {
               if (str3.equals(str4))
               {
                 if (str2.matches("[0-9]"))
                 {
-                  if (localBoolean.booleanValue() == true)
+                  if (bool == true)
                   {
-                    if (Signup_Stu.this.db.insertData(str1, str3, str2) == true)
+                    if (db.insertData(str1, str3, str2) == true)
                     {
-                      Toast.makeText(Signup_Stu.this.getApplicationContext(), "Signup successfully", 1).show();
-                      Intent localIntent = new Intent(Signup_Stu.this, Login_Signup_Stu.class);
-                      Signup_Stu.this.startActivity(localIntent);
+                      Toast.makeText(getApplicationContext(), "Signup successfully", 1).show();
+                      Intent intent = new Intent(this, Login_Signup_Stu.class);
+                      startActivity(intent);
                     }
                   }
                   else {
-                    Toast.makeText(Signup_Stu.this.getApplicationContext(), "Enter Your Seat Number", 1).show();
+                    Toast.makeText(getApplicationContext(), "Enter Your Seat Number", Toast.LENGTH_SHORT).show();
                   }
                 }
                 else {
-                  Toast.makeText(Signup_Stu.this.getApplicationContext(), "Invaild Seat no", 1).show();
+                  Toast.makeText(getApplicationContext(), "Invaild Seat no", Toast.LENGTH_SHORT).show();
                 }
               }
               else {
-                Toast.makeText(Signup_Stu.this.getApplicationContext(), "Pasword and Confrim Password Must be Same", 1).show();
+                Toast.makeText(getApplicationContext(), "Pasword and Confrim Password Must be Same", 1).show();
               }
             }
             else {
-              Toast.makeText(Signup_Stu.this.getApplicationContext(), "email alreay exists", 1).show();
+              Toast.makeText(getApplicationContext(), "email alreay exists", Toast.LENGTH_SHORT).show();
             }
             return;
           }
-          Toast.makeText(Signup_Stu.this.getApplicationContext(), "Invalid email address", 0).show();
+          Toast.makeText(getApplicationContext(), "Invalid email address", Toast.LENGTH_SHORT).show();
           return;
         }
-        Toast.makeText(Signup_Stu.this.getApplicationContext(), "Fields is empty", 0).show();
+        Toast.makeText(getApplicationContext(), "Fields is empty", Toast.LENGTH_SHORT).show();
       }
     });
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.Signup_Stu
- * JD-Core Version:    0.7.0.1
- */
+
+
