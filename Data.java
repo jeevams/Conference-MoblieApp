@@ -50,9 +50,12 @@ public class Data
        return false; 
   }
   
-  public Integer deletData(String paramString)
+  public int deletData(String paramString)
   {
-    return Integer.valueOf(getWritableDatabase().delete("student_table", "SEATNO = ?", new String[] { paramString }));
+    SQLiteDatabase localSQLiteDatabase = getWritableDatabase();
+    int result =localSQLiteDatabase.delete("student_table", "SEATNO = ?", new String[] { paramString });
+    
+    return result;
   }
   
   public boolean insertData(String paramString1, String paramString2, String paramString3)
