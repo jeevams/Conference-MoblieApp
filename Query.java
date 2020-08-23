@@ -19,9 +19,13 @@ public class Query
     super(paramContext, "Query.db", null, 1);
   }
   
-  public Integer deleteData(String paramString)
+  
+  public int deletData(String paramString)
   {
-    return Integer.valueOf(getWritableDatabase().delete("query_table", "ID = ?", new String[] { paramString }));
+    SQLiteDatabase localSQLiteDatabase = getWritableDatabase();
+    int result =localSQLiteDatabase.delete("query_table", "ID = ?", new String[] { paramString });
+    
+    return result;
   }
   
   public Cursor getall()
@@ -35,7 +39,11 @@ public class Query
     ContentValues localContentValues = new ContentValues();
     localContentValues.put("ID", paramString1);
     localContentValues.put("QUESTION", paramString2);
-    return localSQLiteDatabase.insert("query_table", null, localContentValues) != -1L;
+    long result=localSQLiteDatabase.insert("query_table", null, localContentValues);
+    if(result==-1)
+        return false;
+     else
+      return true
   }
   
   public void onCreate(SQLiteDatabase paramSQLiteDatabase)
@@ -50,8 +58,5 @@ public class Query
   }
 }
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.Query
- * JD-Core Version:    0.7.0.1
- */
+
+
