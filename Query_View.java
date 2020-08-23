@@ -47,7 +47,7 @@ public class Query_View
       public void onClick(View v)
       {
         String str =dele.getText().toString();
-        boolean a = mydb. checkseat(str);
+        int a = db.deletData(str);
         int b = mydb.deletData(str);
         if (str.equals(""))
         {
@@ -55,7 +55,7 @@ public class Query_View
            Toast.makeText(getApplicationContext(), "Enter the seat no",Toast.LENGTH_SHORT).show();
           return;
         }
-        if (a==true)
+        if (a>0)
         {
           if (b > 0) 
           {
