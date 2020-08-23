@@ -22,17 +22,32 @@ public class Data
   
   public boolean checkemail(String paramString)
   {
-    return getWritableDatabase().rawQuery("Select * from student_table where ID=?", new String[] { paramString }).getCount() <= 0;
+    SQLiteDatabase localSQLiteDatabase = getWritableDatabase();
+    Cursor cursor=localSQLiteDatabase.rawQuery("Select * from student_table where ID=?", new String[] { paramString });
+    if(cursor.getCount()>0)
+        retrun false;
+    else
+       return true;  
   }
   
   public boolean checkmaila(String paramString1, String paramString2)
   {
-    return getWritableDatabase().rawQuery("Select * from student_table where ID=? and PASSWORD=?", new String[] { paramString1, paramString2 }).getCount() <= 0;
+   SQLiteDatabase localSQLiteDatabase = getWritableDatabase();
+   Cursor cursor=localSQLiteDatabase.rawQuery("Select * from student_table where ID=? and PASSWORD=?", new String[] { paramString1, paramString2 });
+    if(cursor.getCount()>0)
+        retrun true;
+    else
+       return false; 
   }
   
   public boolean checkseat(String paramString)
   {
-    return getWritableDatabase().rawQuery("Select * from student_table where SEATNO=? ", new String[] { paramString }).getCount() <= 0;
+     SQLiteDatabase localSQLiteDatabase = getWritableDatabase();
+     Cursor cursor=localSQLiteDatabase.rawQuery("Select * from student_table where SEATNO=? ", new String[] { paramString });
+     if(cursor.getCount()>0)
+        retrun true;
+      else
+       return false; 
   }
   
   public Integer deletData(String paramString)
@@ -47,7 +62,11 @@ public class Data
     localContentValues.put("ID", paramString1);
     localContentValues.put("PASSWORD", paramString2);
     localContentValues.put("SEATNO", paramString3);
-    return localSQLiteDatabase.insert("student_table", null, localContentValues) != -1L;
+    long result=localSQLiteDatabase.insert("student_table", null, localContentValues);
+    if(result==-1)
+        return false;
+     else
+      return true;
   }
   
   public void onCreate(SQLiteDatabase paramSQLiteDatabase)
@@ -60,10 +79,7 @@ public class Data
     paramSQLiteDatabase.execSQL("DROP TABLE IF EXISTS student_table");
     onCreate(paramSQLiteDatabase);
   }
-}
+} 
 
-
-/* Location:           C:\MAD\MadApp_dex2jar.jar
- * Qualified Name:     com.example.programmingknowledge.madapp.Data
- * JD-Core Version:    0.7.0.1
- */
+
+
