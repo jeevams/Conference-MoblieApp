@@ -15,15 +15,15 @@ public class List_of_Confer
   Button cis;
   Button or;
   
-  protected void onCreate(Bundle paramBundle)
+  protected void onCreate(Bundle savedInstanceState)
   {
-    super.onCreate(paramBundle);
+    super.onCreate(savedInstanceState);
     requestWindowFeature(Window.FEATURE_NO_TITLE);
-    setContentView(2131427356);
-    or = ((Button)findViewById(2131230840));
-    cis = ((Button)findViewById(2131230765));
-    ama = ((Button)findViewById(2131230749));
-    blo = ((Button)findViewById(2131230754));
+    setContentView(R.layout.activity_list_of__confer);
+    or = ((Button)findViewById(oracle));
+    cis = ((Button)findViewById(cisco));
+    ama = ((Button)findViewById(amazon));
+    blo = ((Button)findViewById(block));
     
     
     or.setOnClickListener(new View.OnClickListener()
