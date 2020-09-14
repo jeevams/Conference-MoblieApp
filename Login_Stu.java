@@ -35,7 +35,7 @@ public class Login_Stu
         boolean bool = db.checkmaila(str1, str2);
         if ((!str1.equals("")) && (!str2.equals("")))
         {
-          if ((str1.equals("jeevams")) && (str2.equals("pulsar150")))
+          if ((str1.equals("admin")) && (str2.equals("admin")))
           {
             Toast.makeText(getApplicationContext(), "Login Successfull",Toast.LENGTH_SHORT).show();
            
